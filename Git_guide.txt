@@ -1,0 +1,45 @@
+GitHub使用（针对已经完成基本配置，需要新增库的情况）
+
+1.安装gitbash 网址：https://gitforwindows.org/
+
+2.常用指令    参考网址：https://www.cnblogs.com/miracle77hp/articles/11163532.html
+
+  git init                                            当前目录新建git代码库
+  
+  git init project-name
+  
+  git clone [url]                                     下载一个项目和它的整个代码
+  
+  git config --list                                   查看git配置
+  
+  git config --global user.name "name"                设置提交代码时的用户信息
+  
+  git config --global user.email "email address"      设置提交代码时的用户信息
+  
+  git add file1 file2...                              增加文件到暂存区
+  
+  git add [dir]
+  
+  git commit -m [message]                             提交代码到仓库区（本地仓库）   
+  
+  git commit file1 file2 ...-m [message]              
+  
+  ssh-keygen -t rsa -C "youremail@example.com"        生成密匙，id_rsa是私钥，id_rsa.pub是公钥，会提示密匙保存路径，把公匙添加到GitHub中，
+  
+3.把本地文件推送到远程库一般需要几个步骤  参考网址：https://www.jianshu.com/p/296d22275cdd
+  
+  1.在需要上传的本地文件夹打开 gitbash 
+  
+    git init                                          新建git代码库
+	
+	git config --global user.name "name"
+	
+	git config --global user.email "emailaddress"     设置提交代码时的用户信息
+	
+	git remote add origin url                         把本地仓库和远程仓库联系起来，url为GitHub官网上远程库的链接地址（ssh）
+	
+	git push （-u） origin master                     把文件提交到远程仓库
+	
+	git clone git@github.com:smuyyh/BookReader.git    把文件从远程仓库复制到本地仓库
+
+
