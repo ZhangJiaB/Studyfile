@@ -1,0 +1,40 @@
+树莓派中安装GCC编译器
+
+1.更新树莓派，避免编译版本错误
+
+  sudo apt-get update             访问源列表里的网址，读取软件列表
+
+  sudo apt-get upgrade            把本地安装的软件与软件列表里的软件对比，对版本低的软件进行更新
+
+  sudo apt-get dist-upgrade       根据依赖关系安装软件更新
+
+  sudo rpi-update                 更新固件
+
+  后两项可以不执行，
+
+2.更新GCC和G++
+
+  sudo apt-get install gcc g++   gcc和g++分别是c/c++的编译器
+
+  gcc -v 查看GCC版本信息
+
+3.GCC使用
+
+  1.工作流程
+
+    预处理，生产.i文件（预处理器cpp，处理宏定义与stdio.h文件） gcc -E hello.c -o hello.i
+    
+    将预处理的文件转为汇编语言，生产.s文件（编译器egcs）       gcc -S hello.i -o hello.s 
+   
+    由汇编变为目标代码，生成.o文件（汇编器as）                 gcc -c hello.s -o hello.o
+   
+    连接目标代码，生成可执行程序（链接器ld）                   gcc hello.o 默认生成a.out可执行文件
+
+  2.举例：编译hello.c文件
+
+  gcc -o hello hello.c  把hello.c编译为hello文件
+
+  ./hello 运行hello 文件
+
+  3.
+
