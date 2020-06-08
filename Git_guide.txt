@@ -1,4 +1,4 @@
-GitHub使用（针对已经完成基本配置，需要新增库的情况）
+﻿GitHub使用（针对已经完成基本配置，需要新增库的情况）
 
 1.安装gitbash 网址：https://gitforwindows.org/
 
@@ -30,7 +30,7 @@ GitHub使用（针对已经完成基本配置，需要新增库的情况）
   
   1.在需要上传的本地文件夹打开 gitbash 
   
-    git init                                          新建git代码库
+        git init                                          新建git代码库
 	
 	git config --global user.name "name"
 	
@@ -41,5 +41,17 @@ GitHub使用（针对已经完成基本配置，需要新增库的情况）
 	git push （-u） origin master                     把文件提交到远程仓库
 	
 	git clone git@github.com:smuyyh/BookReader.git    把文件从远程仓库复制到本地仓库
+	
+
+4.常见问题
+
+  在本地新增的文件可以add/commit，但是无法上传到远程仓库
+  
+  其中一个原因在于我在GitHub上增加了read.me 文件，但是没有把这个文件同步到本地仓库，
+  所以在上传本地仓库文件时gitbash提醒我远程仓库中有些文件本地没有，需要先把远程仓库中更改的文件保存到本地
+  
+  使用git pull url 把远程仓库中变更的文件保存到本地，然后可以成功上传本地新建的文件
+  
+  
 
 
