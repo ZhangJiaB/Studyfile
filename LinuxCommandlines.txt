@@ -1,0 +1,23 @@
+文件系统操作指令
+
+1.文件删除指令
+
+  rm filename                          删除文件
+
+  rm -f filename                       强制删除文件
+
+  rm -r dirname                        删除文件夹下面的所有文件，-r表示向下递归
+
+2.文件创建
+  
+  mkdir dirname                        创建文件夹
+
+  vi filename                          创建文件并编辑
+
+  touch filename                       创建二进制文件
+
+3.文件移动
+
+  mv filename /xxx/xxx/xxx   /xxx/xxx/xxx
+
+  mv filename1 filename2               filename1 文件名改为filename2 ，如果文件夹内已经存在filename2，它的内容将被覆盖
