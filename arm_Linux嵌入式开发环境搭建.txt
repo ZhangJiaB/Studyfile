@@ -1,0 +1,17 @@
+﻿Arm+Linux嵌入式开发开发环境搭建
+
+1.编译环境：
+
+  Windows安装VMware虚拟机，下载地址：https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html
+  
+  虚拟机中安装Ubuntu，Ubuntu镜像下载地址：https://ubuntu.com/download/desktop
+  
+  Ubuntu中安装arm-Linux-gcc交叉编译环境：
+  1.Ubuntu中指令安装：sudo apt-get install  gcc-arm-linux-gnueabihf
+                      sudo apt-get install  g++-arm-linux-gnueabihf安装arm-linux-g++
+  2.下载后安装， 注意：64位的Ubuntu系统需要安装64位的交叉编译工具，
+    参考：https://blog.csdn.net/wu10188/article/details/86542418
+	
+	   
+  Windows中建立共享文档（方便编译后文件的烧录？）
+  

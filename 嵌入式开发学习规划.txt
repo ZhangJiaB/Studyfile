@@ -10,7 +10,7 @@ Linux学习部分
   
 
 开发环境:
-  
+树莓派/Windows虚拟机安装Linux系统  
 
 文本编辑工具vim
   
