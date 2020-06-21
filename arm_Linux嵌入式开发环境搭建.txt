@@ -1,34 +1,58 @@
 ﻿Arm+Linux嵌入式开发开发环境搭建
 
-1.编译环境：
+1、主要步骤：
 
-  Windows安装VMware虚拟机，下载地址：https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html（需要注册密匙，网上可以找到资源）
+  1.Windows安装VMware虚拟机，下载地址：https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html（需要注册密匙，网上可以找到资源）
   
-  虚拟机中安装Ubuntu，Ubuntu镜像下载地址：https://ubuntu.com/download/desktop
+  2.VMware虚拟机中安装Ubuntu，Ubuntu镜像下载地址：https://ubuntu.com/download/desktop
   
-  Ubuntu中安装arm-none-eabi-gcc交叉编译环境，在/usr/local目录下新建arm文件夹，工具安装在/usr/local/arm目录下
- （需要 sudo chmod 777 /usr/local/arm增加arm文件夹的权限）
+  3.Ubuntu中安装arm-none-eabi-gcc交叉编译器，在/usr/local目录下新建arm文件夹，工具安装在/usr/local/arm目录下
+  
+    ！！！（需要 sudo chmod 777 /usr/local/arm增加arm文件夹的权限）
+		
+    ！！！ 网上有很多 在window中安装VMware虚拟机、VMware虚拟机中安装Ubuntu系统的教程，需要的话自行百度搜索
+	
+  4.Ubuntu与window主机共享文件，方便项目的开发
+  
+2、Ubuntu中安装交叉编译器
 
-  1.Ubuntu中指令安装：sudo apt-get install  gcc-arm-linux-gnueabihf
-                      sudo apt-get install  g++-arm-linux-gnueabihf安装arm-linux-g++
+    ！！！交叉编译器有很多种，不同交叉编译器的区别可参考：https://www.cnblogs.com/deng-tao/p/6432578.html
+          要根据目标机的CPU类型以及有无操作系统（即目标机是裸机或者安装了Linux等操作系统）选择合适的交叉编译器
+          交叉编译器可以在arm官网上下载
 
-    该方法2020.6.20在Ubuntu系统中尝试安装不成功，
+  1.下载交叉编译器文件，一般为压缩文件
 
-  2.网上下载交叉编译工具，网址：https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm（arm官方网站）
+  两种方法：
 
-    注意：该网站上下载的是 arm-none-eabi-gcc 交叉编译工具，不是arm-linux-gcc交叉编译工具，
+  Ubuntu中指令下载：sudo apt-get install  xxxxxx
+                    
+  xxxxxx为需要安装的交叉编译器名字，这个方法不一定会成功，和Ubuntu的版本以及交叉编译器的依赖项目是否安装有关系，
+
+  网上下载交叉编译工具：
+  
+    网址：https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm（arm官方网站）
+
+    注意：该网站上下载的是 arm-none-eabi-gcc 交叉编译工具，“arm”表示目标机为arm内核；“none”表示目标机没有安装操作系统，为裸机；“eabi”表示嵌入式，表示该编译器适用于嵌入式开发编译，
    
     注意：64位的Ubuntu系统需要安装64位的交叉编译工具，
 
-    下载把文件解压到/usr/local/arm文件夹， 
-    
-    参考：https://blog.csdn.net/wu10188/article/details/86542418
-
-  3.交叉编译工具的区别，参考网址：https://www.cnblogs.com/deng-tao/p/6432578.html
+    下载后把文件解压到/usr/local/arm文件夹， 
+	
     
     ！！！有时间的时候要仔细了解Linux交叉编译的原理、不同交叉编译工具的区别
 	
-  4.解压缩文件到指定文件夹： tar -jxvf archive_name.tar.bz2 -C /tmp/extract_here/	
+	
+  2.解压缩文件到指定文件夹： 
+  
+    tar -jxvf filename.tar.bz2 -C /xxx/xxx(目标路径)，
 	   
-  Windows中建立共享文档（方便编译后文件的烧录？）
+3、Ubuntu与Windows主机共享文档（方便编译后文件的烧录？）
+ 
+   两个步骤：
+   
+   安装VMware tolls，有的在安装Ubuntu时已经安装好了，这是会看到安装选项为灰色
+   
+   设置文件共享
+   
+   参考网址：https://jingyan.baidu.com/article/54b6b9c0b6a4cd2d583b47eb.html
   
